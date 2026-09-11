@@ -1,0 +1,46 @@
+# 复制为 conf/app_config.yaml 后填入本地/环境的真实值。
+# app_config.yaml 已被 .gitignore 排除，请勿把真实密钥提交到仓库。
+logging:
+  file:
+    enable: true
+    level: INFO
+    path: logs
+    rotation: "10 MB"
+    retention: "7 days"
+  console:
+    enable: true
+    level: INFO
+
+db_meta:
+  host: localhost
+  port: 3307
+  user: your_mysql_user
+  password: your_mysql_password
+  database: meta
+
+db_dw:
+  host: localhost
+  port: 3307
+  user: your_mysql_user
+  password: your_mysql_password
+  database: dw
+
+qdrant:
+  host: localhost
+  port: 6333
+  embedding_size: 1024
+
+embedding:
+  host: 127.0.0.1
+  port: 8081
+  model: BAAI/bge-large-zh-v1.5
+
+es:
+  host: localhost
+  port: 9200
+  index_name: data_agent
+
+llm:
+  model_name: qwen3.8-27b
+  api_key: your-llm-api-key
+  base_url: https://dashscope.aliyuncs.com/compatible-mode/v1

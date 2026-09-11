@@ -1,0 +1,43 @@
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---------- IDE ----------
+.idea/
+.vscode/
+*.iml
+
+# ---------- 日志 ----------
+logs/
+*.log
+
+# ---------- 本地配置（含数据库密码与 LLM API Key）----------
+# 仓库中只保留 conf/app_config.example.yaml，本地复制后填入真实值
+conf/app_config.yaml
+
+# ---------- 大体积模型权重与第三方发行包 ----------
+# bge-large-zh-v1.5 约 1.3 GB，pytorch_model.bin 单文件 1.30 GB，超出 Git 平台限制
+# 获取方式见 README：huggingface-cli download BAAI/bge-large-zh-v1.5
+docker/embedding/
+docker/elasticsearch/plugins/*.zip
+
+# ---------- 本地临时脚本 ----------
+/test.py
+
+# ---------- 环境变量（docker/.env 供 compose 读取凭据）----------
+.env
+.env.local
+*.env
+!.env.example
+
+# ---------- 其他 ----------
+.DS_Store
+Thumbs.db
